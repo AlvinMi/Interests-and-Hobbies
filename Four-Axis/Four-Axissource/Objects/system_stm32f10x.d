@@ -5,8 +5,8 @@
 .\objects\system_stm32f10x.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h
 .\objects\system_stm32f10x.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h
 .\objects\system_stm32f10x.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\system_stm32f10x.h
-.\objects\system_stm32f10x.o: C:\Users\Administrator\Desktop\新建文件夹\Four-Axis\RTE\Device\STM32F103C8\stm32f10x_conf.h
-.\objects\system_stm32f10x.o: C:\Users\Administrator\Desktop\新建文件夹\Four-Axis\RTE\RTE_Components.h
+.\objects\system_stm32f10x.o: C:\Users\Administrator\Desktop\余辉github\Four-Axis\Four-Axissource\RTE\Device\STM32F103C8\stm32f10x_conf.h
+.\objects\system_stm32f10x.o: C:\Users\Administrator\Desktop\余辉github\Four-Axis\Four-Axissource\RTE\RTE_Components.h
 .\objects\system_stm32f10x.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\inc\stm32f10x_adc.h
 .\objects\system_stm32f10x.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\stm32f10x.h
 .\objects\system_stm32f10x.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
