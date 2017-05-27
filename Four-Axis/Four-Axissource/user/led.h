@@ -2,20 +2,20 @@
 #define _LED_H
 
 #include "stm32f10x.h"
-#define LED1 	GPIO_Pin_13
-#define LED2 	GPIO_Pin_14
-#define LED3 	GPIO_Pin_15
 
-#define LED4 	GPIO_Pin_15
-#define LED5 	GPIO_Pin_14
-#define LED6 	GPIO_Pin_13
-#define LED7 	GPIO_Pin_9
-#define LED8 	GPIO_Pin_8
-#define LED9 	GPIO_Pin_12
-
+#define LED1		1
+#define LED2		2
+#define LED3		4
+#define LED4		8
+#define LED5		16
+#define LED6		32
+#define LED7		64
+#define LED8		128
+#define LED9		256
 
 void LED_Config(void);
-void LED_On(u16 LEDx);
-void LED_Off(u16 LEDx);
-
+void LED_ON(u16 LEDx);
+void LED_OFF(u16 LEDx);
+void LED_Toggle(u16 LEDx);
+void LED_Circular(u32 delayms);
 #endif
