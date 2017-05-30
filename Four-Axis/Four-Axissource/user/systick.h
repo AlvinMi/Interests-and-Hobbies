@@ -1,5 +1,5 @@
-#ifndef _systick_h
-#define _systick_h
+#ifndef _SYSTICK_H
+#define _SYSTICK_H
 
 #include "stm32f10x.h"
 

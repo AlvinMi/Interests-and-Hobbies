@@ -12,7 +12,7 @@
 #define D8 			GPIO_Pin_8		// PB8
 #define D9 			GPIO_Pin_12		// PB12 (LEDUSER)
 
-
+// LED 函数相关
 void LED_Config(void)
 {
 	GPIO_InitTypeDef GPIO_InitStructus;
@@ -29,8 +29,8 @@ void LED_Config(void)
 	LED_OFF(LED1|LED2|LED3|LED4|LED5|LED6|LED7|LED8|LED9);
 }
 
-// 开 LED
-void LED_ON(u16 LEDx)
+// 关 LED
+void LED_OFF(u16 LEDx)
 {
 	if(LEDx & 1)
 	{
@@ -70,8 +70,8 @@ void LED_ON(u16 LEDx)
 	}
 }
 
-// 关 LED
-void LED_OFF(u16 LEDx)
+// 开 LED
+void LED_ON(u16 LEDx)
 {
 	if(LEDx & 1)
 	{
@@ -153,6 +153,7 @@ void LED_Toggle(u16 LEDx)
 	}
 }
 
+// LED 循环闪烁, 延迟时间可选择
 void LED_Circular(u32 delayms)
 {
 	while(1)

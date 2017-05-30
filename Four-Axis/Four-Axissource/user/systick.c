@@ -1,13 +1,7 @@
-/***************************************************************************************
-									声明
-本项目代码仅供个人学习使用，可以自由移植修改，但必须保留此声明信息。移植过程中出现其他不可
-估量的BUG，修远智控不负任何责任。请勿商用！
-
-程序版本号：	2.0
-日期：			2017-1-1
-作者：			东方萧雨
-版权所有：		修远智控N0.1实验室
-****************************************************************************************/
+/*************************************************************************
+* 本 例 程 移 植 于 其 他
+* Alvin.Mi--2017.5.20
+**************************************************************************/
 /*************************************************************************
 系统滴答定时器
 使用前，需要初始化计时基准
@@ -19,9 +13,17 @@ u32 count;
 
 void SysTick_init(void)
 {
-	SysTick->LOAD  = (uint32_t)(SystemCoreClock/1000000 - 1UL);
+	// 设置重载值 (1us 时基)
+	SysTick->LOAD  = (uint32_t)(SystemCoreClock/1000000 - 1UL);		// 1UL 无符号长整型
+	
+	// 清空计数器中的值
 	SysTick->VAL   = 0UL;
-	SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk |SysTick_CTRL_TICKINT_Msk;
+	
+	// 设置 systick 的时钟源和开启	systick 的中断
+	/***** SysTick_CTRL_CLKSOURCE_Msk = 100; SysTick_CTRL_TICKINT_Msk = 10; 然后配置控制寄存器*****/ 
+	SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk |SysTick_CTRL_TICKINT_Msk;		
+	
+	// 先将 systick 关闭, 有需要计时的时候再打开
 	SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk;
 }
 
@@ -30,7 +32,7 @@ void delay_us(u32 time)
 {
 	if(time<=0)
 		return;
-
+	
 	count = time;
 	SysTick->VAL = 0;
 	SysTick->CTRL |= SysTick_CTRL_ENABLE_Msk;
@@ -50,7 +52,8 @@ void delay_ms(u32 time)
 	SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk;
 }
 
-//systick中断处理函数
+// 中断处理函数都是类似的, 在'startup '文件中会有相对应的中断函数名
+// systick 中断处理函数		
 void SysTick_Handler(void)
 {
 	if(count!=0){
